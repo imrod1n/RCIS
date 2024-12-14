@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showMessage() {
+            let message = "Привет, я JavaScript!"; // локальная переменная
+
+            alert( message );
+        }
+
+        showMessage(); // Привет, я JavaScript!
+
+        alert( message ); // тут нифига не сработает, потому что message существует только для функции showMessage
+
+    </script>
+</body>
+</html>

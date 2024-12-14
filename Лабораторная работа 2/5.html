@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = prompt("Введите фамилию");
+        let p = true;
+        for (let i = 0; i < name.length / 2; i++){
+            console.log(name[i]);
+            console.log(name[name.length - i -1]);
+            if(name[i] != name[name.length - i -1]){
+                alert("Не, не палиндром");
+                p = false;
+                break;
+            }
+        }
+        if(p==true){
+                alert("Опа, палиндром");
+            }
+    </script>
+</body>
+</html>

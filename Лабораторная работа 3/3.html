@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        let positCount = 0;
+        let positSum = 0;        
+        let negCount = 0;
+        let negSum = 0;        
+        let zeroCount = 0;
+
+        for (let i = 0; i < 15; i++){
+            arr.push(Math.round(Math.random()*(30+10+1)-10));
+            console.log(arr[i]);
+            if(arr[i] > 0){
+                positCount++;
+                positSum+=arr[i];
+            }
+            if(arr[i] < 0){
+                negCount++;
+                negSum+=arr[i];
+            }
+            if(arr[i] = 0){
+                zeroCount++;
+            }
+        }
+        alert(positSum/positCount);
+        alert(negSum/negCount);
+        alert(zeroCount);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        let count= 0;
+
+        for (let i = 0; i < 1000000; i++) {
+            arr.push(Math.round(Math.random()*2));
+            console.log(arr[i]);
+            if (arr[i] == 0){
+                count++;
+            }
+        }
+        alert(count);
+    </script>
+</body>
+</html>
