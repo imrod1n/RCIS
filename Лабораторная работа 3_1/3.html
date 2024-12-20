@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        let customer ={
-        name:"Алексей",
-        age: 17,
-        phone: "555-666",
-        email: "Aleksei@mail.org",
-        adress: "Main str, 3",
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            // Пользователи  
+            const customer_1 = { 
+                name: "Max", 
+                email: "max@example.com" 
+            };  
+            const customer_2 = { 
+                name: "Karen", 
+                email: "karen22@example.com" 
+            };  
+            const orders = [order_1 = { 
+                id: 1, 
+                customer: customer_1, 
+                restaurant: "KFC", 
+                dishes: ["Twister", "Pepsi 0.3"] 
+            },  
+            order_2 = { 
+                id: 2, 
+                customer: customer_2, 
+                restaurant: "McDonald's", 
+                dishes: ["Big Mac"]
+            },
+            order_3 = {
+                id: 3, 
+                customer: customer_1, 
+                restaurant: "McDonald's", 
+                dishes: ["Big Mac", "French Fries"] 
+            }]
+            // Заказы  
+            
+            
+            // Рестораны  
+            const cafe_1 = { 
+                name: "KFC", 
+                address: "123 Main Street" 
+            };  
+            const cafe_2 = { 
+                name: "McDonald's", 
+                address: "456 Elm Street" 
+            };  
+        
+            // Найти все заказы, сделанные пользователем 1  
+            const user1Orders = orders.filter((order) => order.customer === customer_1);  
+        
+            
+            // Вывести результат 
+            alert("Список заказов пользователя " + customer_1.name + ":");
+            user1Orders.forEach((order) => {  
+              alert(`Заказ №${order.id}: ${order.dishes} из ${order.restaurant}`);  
+            });
 
-            getInfo(){
-                switch (inf = prompt("Что вы хотите узнать?")){
-                    case "имя": alert(name);
-                    case "имя": alert(name);
-                    case "имя": alert(name);
-                    case "имя": alert(name);
-                    case "имя": alert(name);
-                }
-            }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>

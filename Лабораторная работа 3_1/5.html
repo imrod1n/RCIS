@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name, age, phone) {
+            this.name = "Евстигней";
+            this.age = 25;
+            this.phone = 89009872653;
+            this.getAveragePhone = function() {
+                return this.phone.reduce((a, b) => a + b) / this.phone.length;
+            };
+        }
+        
+        const student1 = new Student("Alex", 17, 79055923949);
+        console.log(student1.name); 
+        console.log(student1.age); 
+        console.log(student1.phone); 
+        console.log(student1.getAveragePhone()); 
+    </script>
+</body>
+</html>
