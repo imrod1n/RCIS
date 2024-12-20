@@ -32,12 +32,12 @@
 
     <table class ="operations_buttons">
         <tr>
-            <th><button onclick="Calculator.add(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value))">+</button></th>
-            <th><button onclick="document.getElementById('o').innerHTML = '-';">-</button></th>
+            <th><button onclick="alert(Calculator.add(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value)))">+</button></th>
+            <th><button onclick="alert(Calculator.subtract(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value)))">-</button></th>
         </tr>
         <tr>
-            <th><button onclick="document.getElementById('o').innerHTML = '*';">*</button></th>
-            <th><button onclick="document.getElementById('o').innerHTML = '/';">/</button></th>
+            <th><button onclick="alert(Calculator.multiply(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value)))">*</button></th>
+            <th><button onclick="alert(Calculator.divide(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value)))">/</button></th>
         </tr>
     <p id="a"></p>
 </body>

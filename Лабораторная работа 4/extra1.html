@@ -1,0 +1,37 @@
+<script>
+    class Simulator {
+      constructor() {
+        this.colors = [0, 1, 2]; // Красный, Черный, Белый
+        this.longestSequence = 0;
+        this.currentSequence = 0;
+      }
+    
+      generateRandomColor() {
+        return Math.floor(Math.random()*3);
+      }
+    
+      runSimulation() {
+        for (let i = 0; i < 1000000; i++) {
+          let color = this.generateRandomColor();
+    
+          if (color == this.lastColor) {
+            this.currentSequence++;
+          } else {
+            this.currentSequence = 1;
+          }
+    
+          if (this.currentSequence > this.longestSequence) {
+            this.longestSequence = this.currentSequence;
+          }
+          
+          this.lastColor = color;
+        }
+    
+        console.log(`Самая длинная последовательность: ${this.longestSequence}`);
+      }
+    }
+    
+    const simulator = new Simulator();
+    simulator.runSimulation();
+    
+    </script>

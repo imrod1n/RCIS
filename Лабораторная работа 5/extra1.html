@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const simulator = () => Math.floor(Math.random() * 3);
+    
+    let results = [];
+    
+    for (let i = 0; i < 1000000; i++) {
+      results.push(simulator());
+    }
+    
+    let currentSequence = [results[0]];
+    let maxSequence = [results[0]];
+    let currentSequenceCount = 1;
+    let maxSequenceCount = 1;
+    
+    for (let i = 1; i < results.length; i++) {
+      if (results[i] === currentSequence[currentSequence.length - 1]) {
+        currentSequence.push(results[i]);
+        currentSequenceCount++;
+    
+        if (currentSequenceCount > maxSequenceCount) {
+          maxSequence = currentSequence;
+          maxSequenceCount = currentSequenceCount;
+        }
+      } else {
+        currentSequence = [results[i]];
+        currentSequenceCount = 1;
+      }
+    }
+    
+    let result = "";
+    
+    switch (maxSequence[0]) {
+      case 0:
+        result = "Red";
+        break;
+      case 1:
+        result = "Black";
+        break;
+      case 2:
+        result = "White";
+        break;
+    }
+    
+    alert(`Самая длинная последовательность: ${result}, длина: ${maxSequenceCount}`);
+    </script>
+</body>
+</html>

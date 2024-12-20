@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text" id="filter-input" placeholder="Введите название почты">
+    <ul id="email-list">
+    </ul>
+    <script>
+      // Получить массив email
+      const emails = [
+        'Amerika@gmail.com',
+        'Russia@gmail.com',
+        'Avstralia@gmail.com',
+        'Columbia@gmail.com',
+        'Germani@gmail.com',
+        'MamaLubimaya@gmail.com',
+      ];
+  
+      // Получить элемент списка email
+      const emailList = document.getElementById('email-list');
+  
+      // Создать элементы списка для каждого email
+      for (let i = 0; i < emails.length; i++) {
+        const email = emails[i];
+        const listItem = document.createElement('li');
+        listItem.textContent = email;
+        emailList.appendChild(listItem);
+      }
+  
+      // Получить поле ввода
+      const filterInput = document.getElementById('filter-input');
+  
+      // Добавить обработчик события ввода
+      filterInput.addEventListener('input', e => {
+        // Получить введенное значение
+        const filterValue = e.target.value.toLowerCase();
+  
+        // Отфильтровать элементы списка
+        const filteredEmails = emails.filter(email => {
+          return email.toLowerCase().includes(filterValue);
+        });
+  
+        // Очистить список email
+        emailList.innerHTML = '';
+  
+        // Создать элементы списка для отфильтрованных email
+        for (let i = 0; i < filteredEmails.length; i++) {
+          const email = filteredEmails[i];
+          const listItem = document.createElement('li');
+          listItem.textContent = email;
+          emailList.appendChild(listItem);
+        }
+      });
+    </script>
+</body>
