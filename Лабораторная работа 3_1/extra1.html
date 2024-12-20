@@ -24,12 +24,21 @@
              return a / b;
            },
          };
-         
-         // Пример использования
-         console.log(Calculator.add(10, 5)); // 15
-         console.log(Calculator.subtract(10, 5)); // 5
-         console.log(Calculator.multiply(10, 5)); // 50
-         console.log(Calculator.divide(10, 5)); // 2
     </script>
+    <div>
+        <input type="number" id="o1" >
+        <input type="number" id="o2" >
+    </div>
+
+    <table class ="operations_buttons">
+        <tr>
+            <th><button onclick="Calculator.add(Number(document.getElementById('o1').value), Number(document.getElementById('o2').value))">+</button></th>
+            <th><button onclick="document.getElementById('o').innerHTML = '-';">-</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="document.getElementById('o').innerHTML = '*';">*</button></th>
+            <th><button onclick="document.getElementById('o').innerHTML = '/';">/</button></th>
+        </tr>
+    <p id="a"></p>
 </body>
 </html>
